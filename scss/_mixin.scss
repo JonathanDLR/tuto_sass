@@ -1,0 +1,11 @@
+//IMPORT VARIABLE
+
+@import 'variable';
+
+// MIXIN GRILLE
+
+@mixin grid-unit($span) {
+  float: left;
+  margin-right: $rowWidth;
+  width: ($columnWidth * $span) + ($rowWidth * ($span - 1));
+}

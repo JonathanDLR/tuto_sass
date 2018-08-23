@@ -1,0 +1,32 @@
+@import 'extends';
+@import 'mixin';
+@import 'variable';
+
+.container {
+  @include grid-unit(12);
+  float: none;
+  margin: 0 auto;
+}
+
+$j: 1;
+
+@for $i from 1 through 5 {
+  #test#{$i} {
+    border: solid 10px;
+    margin-bottom: 1px * ($i - 1);
+    width: 100px*$i;
+
+    @while $j < 5 {
+      p {
+        @extend .style-p;
+      }
+      $j: $j + 1;
+    }
+  }
+}
+
+@each $color in $color {
+  .#{$color} {
+    color: $color;
+  }
+}

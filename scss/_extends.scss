@@ -1,0 +1,9 @@
+@import 'variable';
+
+// EXTENDS STYLE
+.style-p {
+  margin-left: 2px *2;
+  @media screen and(max-width: 768px) {
+    color: $tablet;
+  }
+}
