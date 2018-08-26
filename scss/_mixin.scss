@@ -9,3 +9,16 @@
   margin-right: $rowWidth;
   width: ($columnWidth * $span) + ($rowWidth * ($span - 1));
 }
+
+@mixin background($displayed: true) {
+  @if $displayed {
+    display: block;
+    background-color: black;
+    padding-top: 10px;
+  }
+  @else {
+    display: inline;
+    background-color: red;
+    padding-top: 50px;
+  }
+}

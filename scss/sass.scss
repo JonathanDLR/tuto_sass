@@ -8,13 +8,19 @@
   margin: 0 auto;
 }
 
+@each $color in $color {
+  .#{$color} {
+    color: $color;
+  }
+}
+
 $j: 1;
 
 @for $i from 1 through 5 {
   #test#{$i} {
     border: solid 10px;
     margin-bottom: 1px * ($i - 1);
-    width: 100px*$i;
+    width: 200px*$i;
 
     @while $j < 5 {
       p {
@@ -25,8 +31,10 @@ $j: 1;
   }
 }
 
-@each $color in $color {
-  .#{$color} {
-    color: $color;
-  }
+#test1 p {
+  @include background;
+}
+
+#test2 p {
+  @include background($displayed: false);
 }
